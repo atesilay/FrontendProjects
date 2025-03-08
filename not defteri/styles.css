@@ -1,0 +1,136 @@
+/* Genel sayfa ayarları */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /*ortalamak*/
+    align-items: center;/*ortalamak*/
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Not defteri kutusu */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Başlık */
+h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #444;
+}
+
+/* Giriş kutusu ve buton */
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: 0.3s; /*gecis efekti ekler*/
+}
+
+input:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 5px rgba(118, 75, 162, 0.5);
+}
+
+/* Butonlar */
+button {
+    background: #ff5e62;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #ff9966;
+}
+
+/* Notların listelendiği alan */
+#notes {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Not kutusu */
+.note {
+    background: #ffeb3b;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.note:hover {
+    transform: scale(1.05); 
+}
+
+/* Not içindeki butonlar */
+.note button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.note button:hover {
+    transform: scale(1.2);
+}
+
+/* Silme butonu */
+.note button:nth-child(2) {
+    color: #e74c3c;
+}
+
+/* Düzenleme butonu */
+.note button:nth-child(1) {
+    color: #3498db;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.9); }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
+}
+
+    /*@keyframes fadeIn {} → Yeni eklenen notun aşağıdan belirme efekti.
+@keyframes fadeOut {} → Silinen notun küçülerek kaybolma efekti.*/
